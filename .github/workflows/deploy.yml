@@ -18,8 +18,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
       - run: npm install
+      - run: chmod +x node_modules/.bin/vite
       - run: npx vite build
       - uses: actions/upload-pages-artifact@v3
         with:
